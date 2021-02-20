@@ -1,4 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import VueSvgInlinePlugin from "vue-svg-inline-plugin";
+
+const app = createApp(App)
+
+app.use(VueSvgInlinePlugin);
+
+app.mount('#app');

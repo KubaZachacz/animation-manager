@@ -1,0 +1,110 @@
+#first-start.animate {
+    #tlo-container {
+        transform-origin: center;
+        transform-box: fill-box;
+        transform: scale(1.01);
+    }
+
+    #tlo {
+        animation: background_move 8s infinite linear;
+        transform-origin: center;
+        transform-box: fill-box;
+        animation-direction: alternate;
+    }
+
+    @keyframes background_move {
+        from {
+            transform: translateX(-3px);
+        }
+        to {
+            transform: translateX(3px);
+        }
+    }
+
+    #kolo_1,
+    [data-name="kolo_1"] {
+        animation-name: ball_rotation;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    #p1_kask,
+    [data-name="p1_kask"] {
+        animation-name: head_move;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    #p1_stopa,
+    [data-name="p1_stopa"] {
+        animation-name: foot_move;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform-origin: center right;
+        transform-box: fill-box;
+    }
+
+    #motor_2 {
+        #kolo_1,
+        [data-name="kolo_1"] {
+            animation-delay: 0.5s;
+        }
+
+        #p1_kask,
+        [data-name="p1_kask"],
+        #p1_stopa,
+        [data-name="p1_stopa"] {
+            animation-delay: 0.75s;
+        }
+    }
+
+    #motor_3 {
+        #kolo_1,
+        [data-name="kolo_1"] {
+            animation-delay: 0.25s;
+        }
+
+        #p1_kask,
+        [data-name="p1_kask"],
+        #p1_stopa,
+        [data-name="p1_stopa"] {
+            animation-delay: 0.5s;
+        }
+    }
+
+    @keyframes ball_rotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-359deg);
+        }
+    }
+
+    @keyframes head_move {
+        from {
+            transform: rotate(-5deg);
+        }
+        to {
+            transform: rotate(5deg);
+        }
+    }
+
+    @keyframes foot_move {
+        from {
+            transform: rotate(-2deg);
+        }
+        to {
+            transform: rotate(2deg);
+        }
+    }
+}
